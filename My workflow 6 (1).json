@@ -12,33 +12,30 @@
         },
         "documentId": {
           "__rl": true,
-          "value": "1-0GPDw3UCHwMdYza2U6XE0uESOcqURiOnD3x5GrnuzM",
+          "value": "YOUR_GOOGLE_SHEET_DOCUMENT_ID",
           "mode": "list",
           "cachedResultName": "payment method",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-0GPDw3UCHwMdYza2U6XE0uESOcqURiOnD3x5GrnuzM/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_DOCUMENT_ID/edit"
         },
         "sheetName": {
           "__rl": true,
-          "value": "gid=0",
+          "value": "YOUR_SHEET_NAME",
           "mode": "list",
           "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-0GPDw3UCHwMdYza2U6XE0uESOcqURiOnD3x5GrnuzM/edit#gid=0"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_DOCUMENT_ID/edit#gid=0"
         },
         "event": "rowAdded",
         "options": {}
       },
       "type": "n8n-nodes-base.googleSheetsTrigger",
       "typeVersion": 1,
-      "position": [
-        -80,
-        16
-      ],
+      "position": [-80, 16],
       "id": "67889a45-1668-4e70-9223-5e2cc0f6880e",
       "name": "Google Sheets Trigger",
       "credentials": {
         "googleSheetsTriggerOAuth2Api": {
-          "id": "KdVNkyM2etF6VKTA",
-          "name": "google sheet"
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "YOUR_CREDENTIAL_NAME"
         }
       }
     },
@@ -58,10 +55,7 @@
                   {
                     "leftValue": "={{ $json.payment }}",
                     "rightValue": "card",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    },
+                    "operator": { "type": "string", "operation": "equals" },
                     "id": "fa6bb302-5088-428c-8dd6-425836fe1d82"
                   }
                 ],
@@ -83,10 +77,7 @@
                     "id": "15adefbe-6816-4812-91aa-2d5dbea574d8",
                     "leftValue": "={{ $json.payment }}",
                     "rightValue": "cod",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
+                    "operator": { "type": "string", "operation": "equals" }
                   }
                 ],
                 "combinator": "and"
@@ -107,10 +98,7 @@
                     "id": "45809c82-1089-40e3-8546-4edcebbb8970",
                     "leftValue": "={{ $json.payment }}",
                     "rightValue": "wallet",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
+                    "operator": { "type": "string", "operation": "equals" }
                   }
                 ],
                 "combinator": "and"
@@ -124,10 +112,7 @@
       },
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
-      "position": [
-        208,
-        0
-      ],
+      "position": [208, 0],
       "id": "51106474-701e-426d-847b-cbb2373daec2",
       "name": "Switch"
     },
@@ -141,17 +126,14 @@
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
-      "position": [
-        576,
-        -144
-      ],
+      "position": [576, -144],
       "id": "a75878e9-1b8b-4a2e-891e-b05851cc6a0a",
       "name": "Send a message",
-      "webhookId": "707f1fdc-3993-457f-9fd1-a53b43d98dd1",
+      "webhookId": "YOUR_WEBHOOK_ID_PLACEHOLDER",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ny74X13VS3JiQbPC",
-          "name": "Gmail account"
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "YOUR_CREDENTIAL_NAME"
         }
       }
     },
@@ -165,17 +147,14 @@
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
-      "position": [
-        576,
-        16
-      ],
+      "position": [576, 16],
       "id": "082baa63-5e71-486f-9986-8f9c5859cc3f",
       "name": "Send a message1",
-      "webhookId": "7bbf0571-3f22-499d-8aa3-1fd093a965fb",
+      "webhookId": "YOUR_WEBHOOK_ID_PLACEHOLDER",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ny74X13VS3JiQbPC",
-          "name": "Gmail account"
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "YOUR_CREDENTIAL_NAME"
         }
       }
     },
@@ -189,30 +168,22 @@
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
-      "position": [
-        576,
-        176
-      ],
+      "position": [576, 176],
       "id": "54b9ba3c-0b6c-4d0c-856d-55c2eed9e03d",
       "name": "Send a message2",
-      "webhookId": "84bf2cc4-327d-4ef5-977c-d4228ac5f214",
+      "webhookId": "YOUR_WEBHOOK_ID_PLACEHOLDER",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ny74X13VS3JiQbPC",
-          "name": "Gmail account"
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "YOUR_CREDENTIAL_NAME"
         }
       }
     },
     {
-      "parameters": {
-        "numberInputs": 3
-      },
+      "parameters": { "numberInputs": 3 },
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
-      "position": [
-        960,
-        0
-      ],
+      "position": [960, 0],
       "id": "d53ebdd7-1d5b-42b7-8d9f-6c3a54751702",
       "name": "Merge"
     },
@@ -226,17 +197,14 @@
       },
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
-      "position": [
-        1184,
-        16
-      ],
+      "position": [1184, 16],
       "id": "30c8fda5-5722-4ce7-ba30-35031069e642",
       "name": "Send a message3",
-      "webhookId": "0156f978-6075-4376-b07d-25fced4cbbd2",
+      "webhookId": "YOUR_WEBHOOK_ID_PLACEHOLDER",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ny74X13VS3JiQbPC",
-          "name": "Gmail account"
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "YOUR_CREDENTIAL_NAME"
         }
       }
     }
@@ -244,84 +212,26 @@
   "pinData": {},
   "connections": {
     "Google Sheets Trigger": {
-      "main": [
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": [[{ "node": "Switch", "type": "main", "index": 0 }]]
     },
     "Switch": {
       "main": [
-        [
-          {
-            "node": "Send a message",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Send a message1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Send a message2",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        [{ "node": "Send a message", "type": "main", "index": 0 }],
+        [{ "node": "Send a message1", "type": "main", "index": 0 }],
+        [{ "node": "Send a message2", "type": "main", "index": 0 }]
       ]
     },
     "Send a message": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": [[{ "node": "Merge", "type": "main", "index": 0 }]]
     },
     "Send a message1": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
+      "main": [[{ "node": "Merge", "type": "main", "index": 1 }]]
     },
     "Send a message2": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
+      "main": [[{ "node": "Merge", "type": "main", "index": 2 }]]
     },
     "Merge": {
-      "main": [
-        [
-          {
-            "node": "Send a message3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": [[{ "node": "Send a message3", "type": "main", "index": 0 }]]
     }
   },
   "active": false,
