@@ -3,7 +3,7 @@
 
 This n8n workflow automatically sends emails when a new row is added to a Google Sheet. It checks the payment method (Card / COD / Wallet), sends a confirmation email, and finally sends an order summary.
 
-## 🔧 How It Works
+🔧 How It Works
 
 1. **Trigger** – `Google Sheets Trigger`  
    Monitors a Google Sheet for new rows (every minute).
